@@ -1,40 +1,19 @@
 let allEvents = [];
 let portsData = null; // Hold processed ports data
 
-document.addEventListener("DOMContentLoaded", async () => {
-    const credits = `
-    <h3><strong><u>Special Thanks to </u></strong></h3>
-    <ul>
-        <li style="white-space: nowrap;">
-          <a href="https://arshaw.com/" target="_blank" rel="noopener noreferrer">
-                <strong>Adam Shaw</strong>
-          </a>
-           and 
-          <a href="https://github.com/acerix" target="_blank" rel="noopener noreferrer">
-                <strong>Dylan Ferris</strong>
-          </a>
-           for all the code on 
-          <a href="https://github.com/fullcalendar" target="_blank" rel="noopener noreferrer">Full Calendar</a>.
-        </li>
-        <li style="white-space: nowrap;">
-          <a href="https://www.instagram.com/nris_adda?igsh=MWp5cHB4MTl0Z2oxbg%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer">
-            <strong>NRI Adda</strong> 
-          </a>
-           for your fantastic efforts with 
-          <a href="https://www.instagram.com/channel/AbbhNd3HmiheDm0c/" target="_blank" rel="noopener noreferrer">
-            <strong>Travel Companions</strong>
-          </a> Channel.
-        </li>
-        <li style="white-space: nowrap;">
-          <strong>James Fannon</strong> for the <a href="https://github.com/JFan101/Airports" target="_blank" rel="noopener noreferrer">Airports Data</a>
-        </li>
-    </ul>
-    <div style="font-size: smaller;text-align: center;margin-top: 50px;line-height: 0.2;">
-        <p>We intend to keep this page free of charge, <strong>always</strong>.</p>
-        <p>All code is generated using <strong>xAI - Grok</strong>. Hosted on <strong>Netlify</strong>. Repo with <strong>GitHub</strong></p>
-    </div>
-    `;
+// Define fetchCredits outside the listener
+async function fetchCredits() {
+  try {
+    const response = await fetch('credits.html');
+    if (!response.ok) throw new Error('Failed to fetch credits.html');
+    return await response.text();
+  } catch (error) {
+    console.error('Error fetching credits:', error);
+    return '<p>Error loading credits</p>';
+  }
+}
 
+document.addEventListener("DOMContentLoaded", async () => {
     const calendarEl = document.getElementById("calendar");
     const showHelpersCheckbox = document.getElementById("showHelpers");
     const openFormButton = document.getElementById("openFormButton");
@@ -156,10 +135,10 @@ document.addEventListener("DOMContentLoaded", async () => {
   });
 
   // Profile Popup Functionality
-  profileImg.addEventListener("click", () => {
+  profileImg.addEventListener("click", async () => {
     profilePopup.style.display = "block";
     
-    profilePopupContent.innerHTML = fetchCredits(); // Use innerHTML to render the link
+    profilePopupContent.innerHTML = await fetchCredits(); // Use innerHTML to render the link
   });
 
   closePopup.addEventListener("click", () => {
@@ -404,12 +383,4 @@ document.addEventListener("DOMContentLoaded", async () => {
       failureCallback(error);
     }
   }
-
-  fetchCredits('html/credits.html')
-  .then(response =>{
-    return response.text();
-  })
-  .catch(error =>{
-    return 'Error bringing in HTML';
-  });
 });

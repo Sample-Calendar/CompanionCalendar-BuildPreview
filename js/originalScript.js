@@ -159,7 +159,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   profileImg.addEventListener("click", () => {
     profilePopup.style.display = "block";
     
-    profilePopupContent.innerHTML = fetchCredits; // Use innerHTML to render the link
+    profilePopupContent.innerHTML = fetchCredits(); // Use innerHTML to render the link
   });
 
   closePopup.addEventListener("click", () => {

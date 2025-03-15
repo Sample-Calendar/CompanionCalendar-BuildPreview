@@ -349,7 +349,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   async function fetchEvents(fetchInfo, successCallback, failureCallback) {
     try {
-      const response = await fetch("/data/events.csv");
+      const response = await fetch("data/events.csv");
       const csvText = await response.text();
       Papa.parse(csvText, {
         header: true,

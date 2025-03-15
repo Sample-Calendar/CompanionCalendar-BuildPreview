@@ -1,6 +1,6 @@
 async function loadAirportData() {
   try {
-    const response = await fetch("/data/airports.csv");
+    const response = await fetch("data/airports.csv");
     if (!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`);
     }

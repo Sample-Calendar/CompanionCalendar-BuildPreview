@@ -4,7 +4,7 @@ let portsData = null; // Hold processed ports data
 // Define fetchCredits outside the listener
 async function fetchCredits() {
   try {
-    const response = await fetch('credits.html');
+    const response = await fetch('./html/credits.html');
     if (!response.ok) throw new Error('Failed to fetch credits.html');
     return await response.text();
   } catch (error) {

@@ -18,6 +18,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     const showHelpersCheckbox = document.getElementById("showHelpers");
     const openFormButton = document.getElementById("openFormButton");
     const openFeedbackButton = document.getElementById("openFeedbackButton");
+    const openResourcesButton = document.getElementById("openResourcesButton");
     const eventModal = document.getElementById("eventModal");
     const modalTitle = document.querySelector(".modal-title");
     const modalStart = document.querySelector(".modal-start");
@@ -112,6 +113,9 @@ document.addEventListener("DOMContentLoaded", async () => {
   );
   openFeedbackButton.addEventListener("click", () =>
     window.open("https://docs.google.com/forms/d/e/1FAIpQLSf4uXPSCc4LixrFTcmdYioN4wLlmsjjTSwcUBFEy8nfMAll4A/viewform", "_blank")
+  );
+  openResourcesButton.addEventListener("click", () =>
+    window.open("html/resources.html", "_self")
   );
   //Add a FAQ Page, static website with more information on general things.
   //Recent News/info things

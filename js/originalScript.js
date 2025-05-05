@@ -115,7 +115,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     window.open("https://docs.google.com/forms/d/e/1FAIpQLSf4uXPSCc4LixrFTcmdYioN4wLlmsjjTSwcUBFEy8nfMAll4A/viewform", "_blank")
   );
   openResourcesButton.addEventListener("click", () =>
-    window.open("html/resources.html", "_self")
+    window.open("html/resources.html", "_blank")
   );
   //Add a FAQ Page, static website with more information on general things.
   //Recent News/info things

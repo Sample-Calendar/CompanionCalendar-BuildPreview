@@ -1,13 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+    <script src="../js/resourcesScript.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resources - Your Site</title>
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-    <header>
+    <div class="header-bar">
+        <div class="burger-menu">
+            <i class="fas fa-bars"></i>
+            <div class="burger-dropdown" id="burgerDropdown">
+                <button id="openFormButton" class="add-event-button">Add Event</button>
+                <button id="openFeedbackButton" class="add-event-button">Feedback</button>
+                <button id="openResourcesButton" class="resources-button">Resources</button>
+            </div>
+        </div>
+        <div class="header-center">
+            <div class="header-title">Travel Companion Resources</div>
+            <div class="scrolling-sticker">
+                <div class="scrolling-text">
+                    ℹ️ All resources are informational purposes only.
+                    ℹ️ This is not a legal advice.
+                    ℹ️ All information is true to the best of our knowledge.
+                    ℹ️ Should you have any concerns or corrections, please send them to the insta page.
+                </div>
+            </div>
+        </div>
+        <div class="profile-picture">
+            <img src="data/nri_adda_logo.png" alt="Profile Picture" class="profile-img">
+        </div>
+    </div>
+    <div class="toolbar">
+        <nav class="breadcrumbs">
+            <a href="../index.html">Home</a> > <span>Resources</span>
+        </nav>
+    </div>
+
+    <!-- Profile Popup -->
+    <div id="profilePopup" class="profile-popup">
+        <div class="profile-popup-content">
+            <span class="close-popup">×</span>
+            <div id="profilePopupContent" class="profile-popup-text"></div>
+        </div>
+    </div>
+    <!--<header>
         <h1>Your Site</h1>
         <nav class="desktop-nav">
             <ul>
@@ -26,9 +66,6 @@
         </div>
     </header>
     <main>
-        <nav class="breadcrumbs">
-            <a href="../index.html">Home</a> > <span>Resources</span>
-        </nav>
         <section>
             <h2>Resources</h2>
             <article id="documents">
@@ -56,7 +93,7 @@
                 </ul>
             </article>
         </section>
-    </main>
-    <script src="../js/resourcesScript.js"></script>
+    </main>-->
 </body>
+
 </html>
